@@ -12,20 +12,24 @@ fun main(args: Array<String>) {
     println(findMinElementInTable(numberTable))
 
 // 3. Znajdź drugi największy element (vice-max) w tablicy (cyfry 0-9)
-    QuickSort(numberTable, 0, numberTable.size)
+    QuickSort(numberTable, 0, numberTable.size - 1)
     println(numberTable[numberTable.size - 2])
 
 // 4. Oblicz sumę wszystkich elementów tablicy (liczby 10-99)
-    testTable = tableGenerator(10,10,99)
-    numberTable = testTable.map { it as Number } as MutableList<Number>
-    println(tableSum(numberTable))
+    val ex4testTable = tableGenerator(10,10,99)
+    val ex4numberTable = ex4testTable.map { it as Number } as MutableList<Number>
+    println(tableSum(ex4numberTable))
+
 // 5. Oblicz sumę elementów parzystych w tablicy (cyfry 0-9)
+    println(sumEven(testTable))
 // 6. Oblicz sumę elementów nieparzystych w tablicy (cyfry 0-9)
+    println(sumOdd(testTable))
 // 7. Sprawdź czy tablica jest lustrzana (palindrom) (cyfry 0-9)
 // 8. Sprawdź czy suma elementów na parzystych indeksach równa się sumie na nieparzystych indeksach (cyfry 0-9)
 // 9. Sprawdź czy tablica jest "skacząca" - elementy naprzemiennie mniejsze i większe (cyfry 0-9)
 // 10. Policz ile jest liczb parzystych w tablicy (cyfry 0-9)
 }
+
 fun findMaxElementInTable(table: MutableList<Number>):Number{
     var max = 0.0;
     for(number in table){
@@ -58,7 +62,9 @@ fun tableSum(table: List<Number>):Number{
     return sum
 }
 
+fun sumEven(table: List<Int>) = table.filter { it % 2 == 0 }.sum()
 
+fun sumOdd(table: List<Int>) = table.filter { it % 2 != 0 }.sum()
 
 fun rangeIdentifier(min: Number, max: Number, numberToCheck: Number): Boolean {
     return numberToCheck.toDouble() in  min.toDouble() .. max.toDouble()
@@ -83,7 +89,7 @@ fun QuickSort(array: MutableList<Number>, start:Int, end:Int){
 fun Partition(array: MutableList<Number>, start:Int, end:Int):Int{
     var i = start - 1
     var j = start
-    var pivot = array[end].toDouble()
+    val pivot = array[end].toDouble()
 
 
     while(j < end){
