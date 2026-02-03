@@ -1,10 +1,10 @@
-1. Znajdź największy element w tablicy (cyfry 0-9)
-2. Znajdź najmniejszy element w tablicy (cyfry 0-9)
-3. Znajdź drugi największy element (vice-max) w tablicy (cyfry 0-9)
-4. Oblicz sumę wszystkich elementów tablicy (liczby 10-99)
-5. Oblicz sumę elementów parzystych w tablicy (cyfry 0-9)
-6. Oblicz sumę elementów nieparzystych w tablicy (cyfry 0-9)
-7. Sprawdź czy tablica jest lustrzana (palindrom) (cyfry 0-9)
-8. Sprawdź czy suma elementów na parzystych indeksach równa się sumie na nieparzystych indeksach (cyfry 0-9)
-9. Sprawdź czy tablica jest "skacząca" - elementy naprzemiennie mniejsze i większe (cyfry 0-9)
-10. Policz ile jest liczb parzystych w tablicy (cyfry 0-9)
+1. Algorytm Euklidesa odejmowanie 
+2. Algorytm Euklidesa modulo 
+3. Fibonacci n-ty wyraz iteracyjnie 
+4. Fibonacci n-ty wyraz rekrencyjnie 
+5. Silnia n-ta iteracyjnie 
+6. Silnia n-ta rekrencyjnie 
+7. Algorytm Hornera 
+8. Suma cyfr liczby 
+9. Liczby pierwsze w przedziale <n, m> 
+10.Wypisanie dzielników w przedziału <k, l> liczby x
