@@ -1,4 +1,4 @@
-fun main() {
+fun zad2() {
     var a = readLine().toInt()
     var b = readLine().toInt()
     while (b != 0) {
