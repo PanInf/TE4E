@@ -1,3 +1,5 @@
+import kotlin.math.sqrt
+
 //1. Algorytm Euklidesa odejmowanie
 //2. Algorytm Euklidesa modulo
 //3. Fibonacci n-ty wyraz iteracyjnie
@@ -96,3 +98,36 @@ fun HornerAlgorithm(function: List<Int>, x:Int):Int{
     return result + function[functionSize-1]
 }
 
+fun digitsSum(number:Int):Int{
+    var temp = number
+    var result = 0
+    while (temp != 0){
+        result += number % 10
+        temp /= 10
+    }
+    return result
+}
+
+fun primeNumbersInGivenRange(range: IntRange): List<Int>{
+    val result = mutableListOf<Int>()
+
+    for(number in range){
+        if (isPrime(number)) result.add(number)
+    }
+    return result
+}
+
+fun isPrime(number: Int): Boolean{
+    val numberSqrt = sqrt(number.toDouble()).toInt()
+    
+    for(i in 2 ..< numberSqrt) if (number%i == 0) return false
+    return true
+}
+
+fun divisorsFromGivenRange(number:Int,range: IntRange): List<Int>{
+    val result = mutableListOf<Int>()
+    for (i in range){
+        if (number % i == 0) result.add(i)
+    }
+    return result
+}
