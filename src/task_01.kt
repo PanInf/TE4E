@@ -10,7 +10,11 @@
 //10.Wypisanie dzielników w przedziału <k, l> liczby x
 
 fun main(){
-
+    println(FibonacciIterational(5))
+    println(FibonacciRecursive(5))
+    println(factorialIterational(4))
+    println(factorialRecursive(4))
+    println(HornerAlgorithm(listOf(2,-6,2,-1), 3))
 }
 fun EuklidesSub(a: Int, b: Int):Int{
     var x = kotlin.math.abs(a)
@@ -42,3 +46,53 @@ fun EuklidesMod(a: Int, b: Int): Int{
 
     return x
 }
+
+fun FibonacciIterational(length: Int): List<Int>{
+    val result = mutableListOf<Int>()
+    var a = 1
+    var b = a
+
+    for(i in 1 until length + 1){
+        val temp = a + b
+        b = a
+        a = temp
+
+        result.add(b)
+    }
+    return result
+}
+
+fun FibonacciRecursive(length: Int): Int {
+    val result = mutableListOf<Int>()
+    return if(length in 0..1) 1
+    else FibonacciRecursive(length-1) + FibonacciRecursive(length-2)
+}
+
+fun factorialIterational(length: Int): List<Int>{
+    val result = mutableListOf<Int>()
+    var calc = length
+
+    for(i in length-1 downTo 1){
+        calc *= i
+        result.add(calc)
+    }
+    return result
+}
+
+fun factorialRecursive(length: Int): Int{
+    return when(length){
+        1 -> return 1
+        else -> length * factorialRecursive(length-1)
+    }
+}
+
+fun HornerAlgorithm(function: List<Int>, x:Int):Int{
+    var result = function[0] * x
+    val functionSize = function.size
+
+    for(element in 1..<functionSize-1){
+        result = (result + function[element]) * x
+    }
+    return result + function[functionSize-1]
+}
+
